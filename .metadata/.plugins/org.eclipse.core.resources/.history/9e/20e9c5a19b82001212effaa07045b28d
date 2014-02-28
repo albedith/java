@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class ProblemTwo {
+	/**
+	 * In the game of craps, a pass line bet proceeds as follows. Two six-sided dice are
+	 * rolled; the first roll of the dice in a craps round is called the "come out roll"
+	 * A come out roll of 7 or 11 automatically wins, and a come out roll of 2,3, or 12
+	 * automatically loses. If a 4, 5, 6, 8, 9, or 10 is rolled on the come out roll,
+	 * that number becomes the point. The player keeps rolling the dice until either 7
+	 * or the point is rolled. If the point is rolled first, then the player wins the bet.
+	 * If a 7 is rolled first, then the player loses.
+	 * 
+	 * Write a program that simulates a game of craps using these rules without human input.
+	 * Instead of asking for a wager, the program should calculate whether the player would
+	 * win or lose. The program should simulate rolling the two dice and calculate the sum.
+	 * Add a loop so that the program plays 10,000 games. Add counters that count how many
+	 * times the player wins, and how many times the player loses. At the end of the 10,000
+	 * games, compute the probability of winning (i.e wins/(wins+losses)) and output this
+	 * value. over the long run, who is going to win the most games, you or the house?
+	 * 
+	 * Note: To generate a random number, use x = Math.random();. For example multiplying
+	 * by 6 and converting to an integer results in an integer that  is between 0 and 5.
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Let's start playing \n Enter number zero to start playing ");
+		
+		int StartGame = input.nextInt();
+		int j = 0;
+		
+		if (StartGame == 0)
+		{	
+			for (int n = 0; n <= 3; n++)
+			{
+				int dice1 = 1 + (int)(Math.random()* ((6-1)+1));
+				int dice2 = 1 + (int)(Math.random()* ((6-1)+1));
+											
+				int sum = (dice1 + dice2);
+				System.out.println("dice1 = " + dice1 + "dice2 = " + dice2 + "sum = " + sum);
+				
+				if (sum == 7 )
+					System.out.println("You lost!!");
+				else if(sum == 11)
+					System.out.println("You won!!");
+				else 
+					System.out.println("here is " + (1+j));
+					j++;
+			}
+					
+		}
+		
+	}
+
+}
